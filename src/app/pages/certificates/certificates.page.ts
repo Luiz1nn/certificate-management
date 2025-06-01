@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core"
 
 @Component({
-  selector: 'app-certificates',
-  imports: [],
-  templateUrl: './certificates.page.html',
-  styleUrl: './certificates.page.css'
+	selector: "app-certificates",
+	imports: [],
+	templateUrl: "./certificates.page.html",
+	styleUrl: "./certificates.page.css",
 })
-export class CertificatesPage {
-
-}
+export class CertificatesPage {}
