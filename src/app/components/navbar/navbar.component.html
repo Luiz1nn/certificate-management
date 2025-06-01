@@ -1,5 +1,7 @@
-<nav class="flex justify-between py-4 px-6">
-  <img class="h-10" src="navbar/logo.svg" alt="logo" />
+<nav class="navbar py-4 px-6">
+  <a routerLink="/">
+    <img class="h-10" src="navbar/logo.svg" alt="logo" />
+  </a>
 
   <ul class="flex gap-6">
     <li class="flex items-center gap-1.5 cursor-pointer">
@@ -12,7 +14,6 @@
         #rlaCertificates="routerLinkActive"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        href="#"
       >
         Lista de certificados
       </a>
@@ -28,7 +29,6 @@
         #rlaGenerateCertificate="routerLinkActive"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        href="#"
       >
         Gerar certificado
       </a>
