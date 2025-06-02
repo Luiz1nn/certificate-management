@@ -4,3 +4,9 @@ body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 }
+
+@theme {
+  --color-secondary: #1a2856;
+
+  --color-gray-200: #64748B;
+}
