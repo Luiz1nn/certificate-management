@@ -5,7 +5,7 @@ import { tCertificate } from "@/types/certificate.type"
 import { NgOptimizedImage } from "@angular/common"
 import { Component, ElementRef, OnInit, ViewChild, inject } from "@angular/core"
 import { ActivatedRoute, RouterLink } from "@angular/router"
-import html2canvas from "html2canvas"
+import { toPng } from "html-to-image"
 
 @Component({
 	selector: "app-certificate",
@@ -36,12 +36,11 @@ export class CertificatePage implements OnInit {
 	}
 
 	downloadCertificate() {
-		html2canvas(this.certificateContainerRef.nativeElement, { scale: 2 }).then(
-			canvas => {
+		toPng(this.certificateContainerRef.nativeElement, { quality: 1 }).then(
+			dataUrl => {
 				const link = document.createElement("a")
-				link.href = canvas.toDataURL("image/png")
-				link.download =
-					"certificate_" + this.certificate?.name.replaceAll(" ", "_") + ".png"
+				link.href = dataUrl
+				link.download = `certificate_${this.certificate?.name.replaceAll(" ", "_")}.png`
 				link.click()
 			}
 		)
