@@ -13,4 +13,11 @@ export const routes: Routes = [
 				m => m.GenerateCertificatePage
 			),
 	},
+	{
+		path: "certificate/:id",
+		loadComponent: () =>
+			import("./pages/certificate/certificate.page").then(
+				m => m.CertificatePage
+			),
+	},
 ]

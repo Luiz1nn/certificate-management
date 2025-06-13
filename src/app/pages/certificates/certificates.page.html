@@ -6,7 +6,20 @@
     </p>
   </div>
 
-  @if (certificates.length === 0) {
+  @if (certificates().length === 0) {
     <app-no-certificates />
   }
+
+  <div class="flex flex-col space-y-2 max-w-2xl mx-auto">
+    @for (certificate of certificates(); track $index) {
+      <div class="w-full flex justify-between p-4 rounded-lg border border-gray-100">
+        <div class="flex flex-col">
+          <span class="font-bold text-secondary">{{ certificate.name }}</span>
+          <span class="text-gray-200">Gerado em {{ certificate.issueDate }}</span>
+        </div>
+
+        <app-button label="Ver" (click)="navigateCertificateById(certificate.id)" />
+      </div>
+    }
+  </div>
 </main>

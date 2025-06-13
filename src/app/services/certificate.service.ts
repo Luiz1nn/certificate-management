@@ -5,5 +5,7 @@ import { Injectable } from "@angular/core"
 	providedIn: "root",
 })
 export class CertificateService {
-	certificates: tCertificate[] = []
+	getCertificates(): tCertificate[] {
+		return JSON.parse(localStorage.getItem("certificates") ?? "[]")
+	}
 }
