@@ -23,6 +23,7 @@ export class GenerateCertificateFormComponent {
 
 	addActivity() {
 		const newActivity = this.generateCertificateFormService.activities?.value
+		if (!newActivity) return
 		this.activities.update(currentValue => [...currentValue, newActivity])
 		this.generateCertificateFormService.activities?.setValue(null)
 	}
