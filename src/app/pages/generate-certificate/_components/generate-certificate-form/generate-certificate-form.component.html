@@ -85,5 +85,9 @@
     </div>
   }
 
-  <app-button [disabled]="form.invalid || activities().length === 0" label="Gerar Certificado" type="submit"/>
+  <app-button
+    [disabled]="activities().length === 0 || generateCertificateFormService.isNameInvalid"
+    label="Gerar Certificado"
+    type="submit"
+  />
 </form>
