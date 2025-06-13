@@ -1,1 +1,53 @@
-<p>certificate works!</p>
+<main class="certificate-container">
+  <div class="w-full flex justify-between items-center mb-8">
+    <div class="flex items-center cursor-pointer" routerLink="/">
+      <i class="ph ph-arrow-left text-xl"></i>
+      <span>Voltar</span>
+    </div>
+
+    <app-button
+      [disabled]="!certificate"
+      [icon]="eIcon.downloadSimple"
+      label="Download"
+      (click)="downloadCertificate()"
+    />
+  </div>
+
+  @if (certificate) {
+    <div #certificateContainer class="certificate">
+      <img
+        ngSrc="certificate/certificate_ribbon.png"
+        alt="ícone de medalha"
+        width="88"
+        height="101"
+        class="medal-icon"
+      />
+
+      <div class="certificate-content">
+        <img
+          ngSrc="certificate/certificate_signature.svg"
+          alt="assinatura"
+          width="64"
+          height="64"
+          class="signature-icon"
+        />
+
+        <div class="certificate-info">
+          <div class="mb-5">
+            <h1 class="text-center text-2xl text-secondary font-black">CERTIFICADO DE CONCLUSÃO</h1>
+            <p class="text-center mx-auto text-gray-300">Este certificado comprova que</p>
+          </div>
+
+          <p class="certificate-name">{{ certificate.name }}</p>
+
+          <div class="text-center space-y-2">
+            <p>Concluiu com sucesso as seguintes atividades:</p>
+            <p>{{ certificate.activities.join(', ')}}</p>
+          </div>
+        </div>
+
+        <p class="certificate-issue-date">Emitido em {{ certificate.issueDate }}</p>
+      </div>
+    </div>
+  }
+</main>

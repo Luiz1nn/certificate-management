@@ -1,4 +1,4 @@
 export enum eIcon {
 	plus = "plus",
-	x = "x",
+	downloadSimple = "download-simple",
 }

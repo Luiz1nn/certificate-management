@@ -74,7 +74,7 @@
             <span>{{ activity }}</span>
             <i
               (click)="removeActivity($index)"
-              [class]="`ph ph-${eIcon.x} text-2xl text-danger hover:text-danger-dark`"
+              class="ph ph-x text-2xl text-danger hover:text-danger-dark"
             ></i>
           </div>
           @if ($index + 1 != activities().length) {

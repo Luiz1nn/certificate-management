@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@reference "../../../styles.css";
+
+.certificate-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.certificate {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 800px;
+  height: 550px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../../public/certificate/certificate_bg.png");
+}
+
+.medal-icon {
+  z-index: 1;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.certificate-content {
+  position: relative;
+  width: 720px;
+  height: 470px;
+
+  @apply bg-white rounded-lg;
+}
+
+.certificate-info {
+  @apply px-10 pt-16 pb-10 mb-5;
+}
+
+.certificate-name {
+  font-family: "Dancing Script";
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 80px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #3b5ac2;
+
+  @apply mb-5;
+}
+
+.certificate-issue-date {
+  font-size: 11.2px;
+  line-height: 160%;
+  letter-spacing: 0;
+  text-align: center;
+
+  @apply text-gray-300 font-bold;
+}
+
+.signature-icon {
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  width: 64px;
+  height: 64px;
+}
