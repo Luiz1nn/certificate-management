@@ -2,5 +2,7 @@
   @if (icon) {
     <i class="text-xl ph ph-{{ icon }}"></i>
   }
-  {{ label }}
+  @if (label) {
+    {{ label }}
+  }
 </button>

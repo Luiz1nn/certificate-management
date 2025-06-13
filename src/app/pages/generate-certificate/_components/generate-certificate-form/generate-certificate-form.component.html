@@ -32,7 +32,7 @@
         class="font-medium"
         [ngClass]="{
           'text-secondary': !generateCertificateFormService.isActivitiesInvalid,
-          'text-red-500': generateCertificateFormService.isActivitiesInvalid
+          'text-red-500': generateCertificateFormService.isActivitiesInvalid && activities().length === 0
         }"
       >Atividade</label>
       <div class="flex gap-2">
@@ -44,15 +44,16 @@
         />
 
         <app-button
+          (click)="addActivity()"
           class="mt-auto"
           [disabled]="generateCertificateFormService.isActivitiesInvalid"
-          [icon]="plusIcon"
+          [icon]="eIcon.plus"
           label="Adicionar"
           type="button"
         />
       </div>
 
-      @if (generateCertificateFormService.isActivitiesInvalid) {
+      @if (generateCertificateFormService.isActivitiesInvalid && activities().length === 0) {
         @if (generateCertificateFormService.activities?.errors?.['required']) {
           <small class="text-red-500">Atividade é obrigatória.</small>
         }
@@ -63,5 +64,26 @@
     </div>
   </div>
 
-  <app-button [disabled]="form.invalid" label="Gerar Certificado" type="submit"/>
+  @if (activities().length > 0) {
+    <div class="space-y-2 mb-8">
+      <span class="text-secondary font-medium">Lista de atividades</span>
+
+      <div class="p-4 rounded-lg space-y-3 border border-gray-100">
+        @for (activity of activities(); track $index) {
+          <div class="flex items-center justify-between">
+            <span>{{ activity }}</span>
+            <i
+              (click)="removeActivity($index)"
+              [class]="`ph ph-${eIcon.x} text-2xl text-danger hover:text-danger-dark`"
+            ></i>
+          </div>
+          @if ($index + 1 != activities().length) {
+            <hr class="text-gray-100" />
+          }
+        }
+      </div>
+    </div>
+  }
+
+  <app-button [disabled]="form.invalid && activities().length === 0" label="Gerar Certificado" type="submit"/>
 </form>

@@ -8,6 +8,8 @@ body {
 @theme {
   --color-primary: linear-gradient(90deg, #1A2856 0%, #334EA9 100%);
   --color-secondary: #1a2856;
+  --color-danger: #E95F5F;
+  --color-danger-dark: #D71D1D;
   --color-gray-100: #E2E8F0;
   --color-gray-200: #64748B;
 }

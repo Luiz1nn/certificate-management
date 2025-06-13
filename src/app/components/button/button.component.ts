@@ -11,5 +11,5 @@ export class ButtonComponent {
 	@Input({ required: false }) disabled = false
 	@Input({ required: false }) type: "button" | "submit" = "button"
 	@Input({ required: false }) icon!: eIcon
-	@Input({ required: true }) label!: string
+	@Input({ required: false }) label!: string
 }

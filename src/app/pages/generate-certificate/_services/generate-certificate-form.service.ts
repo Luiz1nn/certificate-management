@@ -1,4 +1,4 @@
-import { formatCurrentDate } from "@/helpers/format-current-date"
+import { tCertificate } from "@/types/certificate.type"
 import { Injectable, inject } from "@angular/core"
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 
@@ -8,6 +8,14 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 export class GenerateCertificateFormService {
 	formBuilder = inject(FormBuilder)
 	form: FormGroup = this.createForm()
+
+	private createForm() {
+		return this.formBuilder.group({
+			name: [null, [Validators.required, Validators.minLength(3)]],
+			activities: [null, [Validators.required, Validators.minLength(3)]],
+			issueDate: null,
+		})
+	}
 
 	get name() {
 		return this.form.get("name")
@@ -30,11 +38,11 @@ export class GenerateCertificateFormService {
 		)
 	}
 
-	private createForm() {
-		return this.formBuilder.group({
-			name: [null, [Validators.required, Validators.minLength(3)]],
-			activities: [null, [Validators.required, Validators.minLength(3)]],
-			issueDate: [formatCurrentDate(), [Validators.required]],
-		})
+	addCertificate(certificate: tCertificate) {
+		const certificates = JSON.parse(
+			localStorage.getItem("certificates") ?? "[]"
+		)
+		certificates.unshift({ ...certificate })
+		localStorage.setItem("certificates", JSON.stringify(certificates))
 	}
 }
