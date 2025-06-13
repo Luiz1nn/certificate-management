@@ -23,7 +23,7 @@
 		"enabled": true,
 		"rules": {
 			"style": {
-        "useTemplate": "off",
+				"useTemplate": "off",
 				"useImportType": "off"
 			},
 			"correctness": {
