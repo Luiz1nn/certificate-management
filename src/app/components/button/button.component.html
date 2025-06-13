@@ -1,6 +1,6 @@
-<button
-  type="button"
-  class="bg-secondary text-white hover:bg-secondary/90 rounded-md px-4 py-2 cursor-pointer"
->
+<button [type]="type" [disabled]="disabled" class="button">
+  @if (icon) {
+    <i class="text-xl ph ph-{{ icon }}"></i>
+  }
   {{ label }}
 </button>

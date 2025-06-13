@@ -1,0 +1,11 @@
+@reference "../../../styles.css";
+
+.button {
+  @apply bg-secondary text-white font-semibold hover:bg-secondary/90 disabled:bg-secondary/50;
+  @apply gap-2 rounded-md px-4 py-2.5 w-full;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
