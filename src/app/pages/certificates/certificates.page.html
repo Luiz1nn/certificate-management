@@ -6,5 +6,7 @@
     </p>
   </div>
 
-  <app-no-certificates />
+  @if (certificates.length === 0) {
+    <app-no-certificates />
+  }
 </main>
