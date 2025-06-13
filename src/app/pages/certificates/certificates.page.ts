@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from "@angular/core"
 
-import { tCertificate } from "@/pages/certificates/types/certificate.type"
 import { CertificateService } from "@/services/certificate.service"
+import { tCertificate } from "@/types/certificate.type"
 import { NoCertificatesComponent } from "./_components/no-certificates/no-certificates.component"
 
 @Component({

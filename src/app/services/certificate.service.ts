@@ -1,4 +1,4 @@
-import { tCertificate } from "@/pages/certificates/types/certificate.type"
+import { tCertificate } from "@/types/certificate.type"
 import { Injectable } from "@angular/core"
 
 @Injectable({
